@@ -1,35 +1,87 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Link from '@material-ui/core/Link';
-import SvgIcon from '@material-ui/core/SvgIcon';
-import Typography from '@material-ui/core/Typography';
-
-function LightBulbIcon(props) {
-  return (
-    <SvgIcon {...props}>
-      <path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7zm2.85 11.1l-.85.6V16h-4v-2.3l-.85-.6C7.8 12.16 7 10.63 7 9c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.63-.8 3.16-2.15 4.1z" />
-    </SvgIcon>
-  );
-}
+import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import IconButton from "@material-ui/core/IconButton";
+import Typography from "@material-ui/core/Typography";
+import Tooltip from "@material-ui/core/Tooltip";
+import LanguageIcon from "@material-ui/icons/Language";
+import CallIcon from "@material-ui/icons/Call";
+import EmailIcon from "@material-ui/icons/Email";
+import WhatsAppIcon from "@material-ui/icons/WhatsApp";
+import InstagramIcon from "@material-ui/icons/Instagram";
+import LinkedInIcon from "@material-ui/icons/LinkedIn";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    margin: theme.spacing(6, 0, 3),
-  },
-  lightBulb: {
-    verticalAlign: 'middle',
-    marginRight: theme.spacing(1),
+    textAlign: "center",
+    marginBottom: theme.spacing(5),
   },
 }));
 
 export default function ProTip() {
   const classes = useStyles();
   return (
-    <Typography className={classes.root} color="textSecondary">
-      <LightBulbIcon className={classes.lightBulb} />
-      Pro tip: See more{' '}
-      <Link href="https://material-ui.com/getting-started/templates/">templates</Link> on the
-      Material-UI documentation.
-    </Typography>
+    <div className={classes.root}>
+      <Typography color="textSecondary" align="center" gutterBottom>
+        For buy this domain please contact me
+      </Typography>
+      <Tooltip title="Visit Website">
+        <IconButton
+          color="default"
+          title="Website"
+          target="_blank"
+          rel="noopener"
+          href="http://dadwic.com/"
+        >
+          <LanguageIcon fontSize="large" />
+        </IconButton>
+      </Tooltip>
+      <Tooltip title="Call">
+        <IconButton color="default" title="Phone" href="tel:+989390219753">
+          <CallIcon fontSize="large" />
+        </IconButton>
+      </Tooltip>
+      <Tooltip title="Send Email">
+        <IconButton
+          color="default"
+          title="Email"
+          href="mailto:dadwic0@gmail.com"
+        >
+          <EmailIcon fontSize="large" />
+        </IconButton>
+      </Tooltip>
+      <Tooltip title="WhatsApp Chat">
+        <IconButton
+          color="default"
+          title="WhatsApp"
+          target="_blank"
+          rel="noopener"
+          href="https://wa.me/989390219753?text=BuyDomain"
+        >
+          <WhatsAppIcon fontSize="large" />
+        </IconButton>
+      </Tooltip>
+      <Tooltip title="Instagram Page">
+        <IconButton
+          color="default"
+          title="Instagram"
+          target="_blank"
+          rel="noopener"
+          href="https://www.instagram.com/dadwic/"
+        >
+          <InstagramIcon fontSize="large" />
+        </IconButton>
+      </Tooltip>
+      <Tooltip title="LinkedIn Profile">
+        <IconButton
+          color="default"
+          title="LinkedIn"
+          target="_blank"
+          rel="noopener"
+          href="https://www.linkedin.com/in/dadwic/"
+        >
+          <LinkedInIcon fontSize="large" />
+        </IconButton>
+      </Tooltip>
+    </div>
   );
 }

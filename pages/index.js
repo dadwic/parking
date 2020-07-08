@@ -1,24 +1,34 @@
-import React from 'react';
-import Container from '@material-ui/core/Container';
-import Typography from '@material-ui/core/Typography';
-import Box from '@material-ui/core/Box';
-import ProTip from '../src/ProTip';
-import Link from '../src/Link';
-import Copyright from '../src/Copyright';
+import React from "react";
+import Container from "@material-ui/core/Container";
+import Typography from "@material-ui/core/Typography";
+import Box from "@material-ui/core/Box";
+import ProTip from "../src/ProTip";
+import Copyright from "../src/Copyright";
 
-export default function Index() {
+export default function Index(props) {
   return (
-    <Container maxWidth="sm">
-      <Box my={4}>
-        <Typography variant="h4" component="h1" gutterBottom>
-          Next.js example
+    <Container maxWidth="lg">
+      <Box my={8}>
+        <Typography variant="h2" align="center" color="error" gutterBottom>
+          For sale
         </Typography>
-        <Link href="/about" color="secondary">
-          Go to the about page
-        </Link>
+        <Typography
+          variant="h1"
+          align="center"
+          style={{ fontWeight: "bold" }}
+          gutterBottom
+        >
+          {props.host}
+        </Typography>
         <ProTip />
         <Copyright />
       </Box>
     </Container>
   );
+}
+
+export async function getServerSideProps(context) {
+  return {
+    props: context.req.headers,
+  };
 }
