@@ -9,7 +9,8 @@
     "next": "latest",
     "prop-types": "latest",
     "react": "latest",
-    "react-dom": "latest"
+    "react-dom": "latest",
+    "sentence-case": "^3.0.3"
   },
   "scripts": {
     "dev": "next",

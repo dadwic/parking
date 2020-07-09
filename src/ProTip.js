@@ -27,7 +27,6 @@ export default function ProTip() {
       <Tooltip title="Visit Website">
         <IconButton
           color="default"
-          title="Website"
           target="_blank"
           rel="noopener"
           href="http://dadwic.com/"
@@ -36,23 +35,18 @@ export default function ProTip() {
         </IconButton>
       </Tooltip>
       <Tooltip title="Call">
-        <IconButton color="default" title="Phone" href="tel:+989390219753">
+        <IconButton color="default" href="tel:+989390219753">
           <CallIcon fontSize="large" />
         </IconButton>
       </Tooltip>
       <Tooltip title="Send Email">
-        <IconButton
-          color="default"
-          title="Email"
-          href="mailto:dadwic0@gmail.com"
-        >
+        <IconButton color="default" href="mailto:dadwic0@gmail.com">
           <EmailIcon fontSize="large" />
         </IconButton>
       </Tooltip>
       <Tooltip title="WhatsApp Chat">
         <IconButton
           color="default"
-          title="WhatsApp"
           target="_blank"
           rel="noopener"
           href="https://wa.me/989390219753?text=BuyDomain"
@@ -63,7 +57,6 @@ export default function ProTip() {
       <Tooltip title="Instagram Page">
         <IconButton
           color="default"
-          title="Instagram"
           target="_blank"
           rel="noopener"
           href="https://www.instagram.com/dadwic/"
@@ -74,7 +67,6 @@ export default function ProTip() {
       <Tooltip title="LinkedIn Profile">
         <IconButton
           color="default"
-          title="LinkedIn"
           target="_blank"
           rel="noopener"
           href="https://www.linkedin.com/in/dadwic/"
