@@ -21,8 +21,8 @@ export default function MyApp(props) {
     <React.Fragment>
       <Head>
         <title>
-          {sentenceCase(pageProps.host, { delimiter: "." })} is for sale - (
-          {sentenceCase(pageProps.host.split(".")[0])})
+          {sentenceCase(pageProps.host || "Error", { delimiter: "." })} is for
+          sale
         </title>
         <meta
           name="viewport"
