@@ -1,6 +1,6 @@
 {
-  "name": "nextjs",
-  "version": "4.0.0",
+  "name": "parking",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@material-ui/core": "latest",
