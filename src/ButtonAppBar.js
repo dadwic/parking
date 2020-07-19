@@ -23,7 +23,7 @@ export default function ButtonAppBar(props) {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
+    <div className={classes.root} id="back-to-top-anchor">
       <AppBar position="fixed" color="secondary">
         <Toolbar>
           <Typography variant="h6" className={classes.title}>
