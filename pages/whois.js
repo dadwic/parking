@@ -36,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
 export default function Whois(props) {
   const classes = useStyles();
   const [data, setData] = useState({});
-  const [play, setPlay] = useState(false);
+  const [play, setPlay] = useState(true);
   const [domains, setDomains] = useState([]);
   const [hasMore, setHasMore] = useState(true);
 
@@ -48,25 +48,30 @@ export default function Whois(props) {
     if (play) {
       const index =
         Object.keys(data).length === 0 ? 0 : Object.keys(data).length + 1;
-      axios
-        .get(`http://whois.nic.ir/WHOIS?name=${domains[index]}.ir`)
-        .then(function (response) {
-          // handle success
-          setData({
-            ...data,
-            [domains[index]]:
-              response.data.search("ERROR:101") === -1 ? "error" : "success",
-          });
-        })
-        .catch(function (error) {
-          // handle error
-          setData({ ...data, [domains[index]]: "warning" });
-        });
+      fetchNicData(domains[index]);
     }
   }, [data, play]);
 
+  const fetchNicData = (domain) => {
+    axios
+      .get(`http://whois.nic.ir/WHOIS?name=${domain}.ir`)
+      .then(function (response) {
+        // handle success
+        setData({
+          ...data,
+          [domain]:
+            response.data.search("ERROR:101") === -1 ? "error" : "success",
+        });
+      })
+      .catch(function (error) {
+        // handle error
+        setData({ ...data, [domain]: "warning" });
+        console.log(`domain: ${domain}.ir | error: `, error);
+      });
+  };
+
   const fetchMoreData = () => {
-    if (domains.length >= 1000) {
+    if (domains.length >= 1065) {
       setHasMore(false);
       return;
     }
@@ -138,7 +143,13 @@ export default function Whois(props) {
                 <ListItemText primary={`${domain}.ir`} />
                 {data[domain] === "warning" && (
                   <ListItemSecondaryAction>
-                    <IconButton edge="end">
+                    <IconButton
+                      edge="end"
+                      onClick={() => {
+                        // setData({ ...data, [domain]: false });
+                        fetchNicData(domain);
+                      }}
+                    >
                       <ReplayIcon />
                     </IconButton>
                   </ListItemSecondaryAction>
