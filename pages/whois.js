@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import axios from "axios";
 import Head from "next/head";
 import { makeStyles } from "@material-ui/core/styles";
@@ -12,6 +12,7 @@ import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import ListItemSecondaryAction from "@material-ui/core/ListItemSecondaryAction";
 import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
+import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 import QueryBuilderIcon from "@material-ui/icons/QueryBuilder";
 import CheckCircleIcon from "@material-ui/icons/CheckCircle";
 import WarningIcon from "@material-ui/icons/Warning";
@@ -20,6 +21,7 @@ import ReplayIcon from "@material-ui/icons/Replay";
 import InfiniteScroll from "react-infinite-scroll-component";
 import ButtonAppBar from "../src/ButtonAppBar";
 import ScrollTop from "../src/ScrollTop";
+import ScrollBottom from "../src/ScrollBottom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -35,6 +37,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Whois(props) {
   const classes = useStyles();
+  const buttonEl = useRef(null);
   const [data, setData] = useState({});
   const [play, setPlay] = useState(true);
   const [domains, setDomains] = useState([]);
@@ -48,6 +51,11 @@ export default function Whois(props) {
     if (play) {
       const index =
         Object.keys(data).length === 0 ? 0 : Object.keys(data).length + 1;
+
+      if (index % 10 === 0) {
+        // buttonEl.current.click();
+        window.scrollBy(0, 300);
+      }
       fetchNicData(domains[index]);
     }
   }, [data, play]);
@@ -57,11 +65,16 @@ export default function Whois(props) {
       .get(`http://whois.nic.ir/WHOIS?name=${domain}.ir`)
       .then(function (response) {
         // handle success
+        const status =
+          response.data.search("ERROR:101") === -1 ? "error" : "success";
         setData({
           ...data,
-          [domain]:
-            response.data.search("ERROR:101") === -1 ? "error" : "success",
+          [domain]: status,
         });
+        if (status === "success") {
+          localStorage.setItem(`${domain}.ir`, status);
+          alert(`${domain}.ir HOORA!!! Yes`);
+        }
       })
       .catch(function (error) {
         // handle error
@@ -71,7 +84,7 @@ export default function Whois(props) {
   };
 
   const fetchMoreData = () => {
-    if (domains.length >= 1065) {
+    if (domains.length >= 17576) {
       setHasMore(false);
       return;
     }
@@ -158,12 +171,23 @@ export default function Whois(props) {
             ))}
           </InfiniteScroll>
         </List>
+        <div id="back-to-bottom-anchor" />
       </div>
       <ScrollTop {...props}>
         <Fab color="secondary" size="small" aria-label="scroll back to top">
           <KeyboardArrowUpIcon />
         </Fab>
       </ScrollTop>
+      <ScrollBottom {...props}>
+        <Fab
+          color="secondary"
+          ref={buttonEl}
+          size="small"
+          aria-label="scroll back to bottom"
+        >
+          <KeyboardArrowDownIcon />
+        </Fab>
+      </ScrollBottom>
     </Box>
   );
 }
