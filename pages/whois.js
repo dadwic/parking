@@ -21,7 +21,7 @@ import ReplayIcon from "@material-ui/icons/Replay";
 import ButtonAppBar from "../src/ButtonAppBar";
 import ScrollTop from "../src/ScrollTop";
 import ScrollBottom from "../src/ScrollBottom";
-import domains from "../public/domains0.json";
+import domains from "../public/domains.json";
 
 const useStyles = makeStyles((theme) => ({
   root: {
