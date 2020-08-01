@@ -7,7 +7,7 @@ import Zoom from "@material-ui/core/Zoom";
 const useStyles = makeStyles((theme) => ({
   root: {
     position: "fixed",
-    bottom: theme.spacing(8),
+    bottom: theme.spacing(1),
     left: theme.spacing(2),
   },
 }));
@@ -26,7 +26,7 @@ function ScrollTop(props) {
 
   const handleClick = (event) => {
     const anchor = (event.target.ownerDocument || document).querySelector(
-      "#back-to-top-anchor"
+      "#back-to-bottom-anchor"
     );
 
     if (anchor) {

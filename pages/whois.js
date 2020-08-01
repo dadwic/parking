@@ -12,14 +12,16 @@ import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import ListItemSecondaryAction from "@material-ui/core/ListItemSecondaryAction";
 import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
+import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 import QueryBuilderIcon from "@material-ui/icons/QueryBuilder";
 import CheckCircleIcon from "@material-ui/icons/CheckCircle";
 import WarningIcon from "@material-ui/icons/Warning";
 import ErrorIcon from "@material-ui/icons/Error";
 import ReplayIcon from "@material-ui/icons/Replay";
-import InfiniteScroll from "react-infinite-scroll-component";
 import ButtonAppBar from "../src/ButtonAppBar";
 import ScrollTop from "../src/ScrollTop";
+import ScrollBottom from "../src/ScrollBottom";
+import domains from "../public/domains0.json";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -37,17 +39,15 @@ export default function Whois(props) {
   const classes = useStyles();
   const [data, setData] = useState({});
   const [play, setPlay] = useState(true);
-  const [domains, setDomains] = useState([]);
-  const [hasMore, setHasMore] = useState(true);
-
-  useEffect(() => {
-    fetchMoreData();
-  }, []);
 
   useEffect(() => {
     if (play) {
       const index =
         Object.keys(data).length === 0 ? 0 : Object.keys(data).length + 1;
+
+      if (index % 10 === 0) {
+        window.scrollBy(0, 300);
+      }
       fetchNicData(domains[index]);
     }
   }, [data, play]);
@@ -57,11 +57,16 @@ export default function Whois(props) {
       .get(`http://whois.nic.ir/WHOIS?name=${domain}.ir`)
       .then(function (response) {
         // handle success
+        const status =
+          response.data.search("ERROR:101") === -1 ? "error" : "success";
         setData({
           ...data,
-          [domain]:
-            response.data.search("ERROR:101") === -1 ? "error" : "success",
+          [domain]: status,
         });
+        if (status === "success") {
+          localStorage.setItem(`${domain}.ir`, status);
+          alert(`${domain}.ir HOORA!!! Yes`);
+        }
       })
       .catch(function (error) {
         // handle error
@@ -71,7 +76,7 @@ export default function Whois(props) {
   };
 
   const fetchMoreData = () => {
-    if (domains.length >= 1065) {
+    if (domains.length >= 17576) {
       setHasMore(false);
       return;
     }
@@ -101,69 +106,58 @@ export default function Whois(props) {
       />
       <div className={classes.list}>
         <List dense>
-          <InfiniteScroll
-            dataLength={domains.length}
-            next={fetchMoreData}
-            hasMore={hasMore}
-            loader={
-              <Box textAlign="center" py={2}>
-                <b>Loading...</b>
-              </Box>
-            }
-            endMessage={
-              <Box textAlign="center" py={2}>
-                <b>Yay! You have seen it all</b>
-              </Box>
-            }
-          >
-            {domains.map((domain, index) => (
-              <ListItem
-                button
-                key={index}
-                onClick={() =>
-                  window.open(
-                    `http://whois.nic.ir/WHOIS?name=${domain}.ir`,
-                    "_blank"
-                  )
-                }
-              >
-                <ListItemIcon>
-                  <Typography>{index + 1}</Typography>
-                </ListItemIcon>
-                <ListItemIcon>
-                  {!data[domain] && <QueryBuilderIcon color="action" />}
-                  {data[domain] === "success" && (
-                    <CheckCircleIcon style={{ color: "#28a745" }} />
-                  )}
-                  {data[domain] === "error" && <ErrorIcon color="error" />}
-                  {data[domain] === "warning" && (
-                    <WarningIcon style={{ color: "#ffc107" }} />
-                  )}
-                </ListItemIcon>
-                <ListItemText primary={`${domain}.ir`} />
-                {data[domain] === "warning" && (
-                  <ListItemSecondaryAction>
-                    <IconButton
-                      edge="end"
-                      onClick={() => {
-                        // setData({ ...data, [domain]: false });
-                        fetchNicData(domain);
-                      }}
-                    >
-                      <ReplayIcon />
-                    </IconButton>
-                  </ListItemSecondaryAction>
+          {domains.map((domain, index) => (
+            <ListItem
+              button
+              key={index}
+              onClick={() =>
+                window.open(
+                  `http://whois.nic.ir/WHOIS?name=${domain}.ir`,
+                  "_blank"
+                )
+              }
+            >
+              <ListItemIcon>
+                <Typography>{index + 1}</Typography>
+              </ListItemIcon>
+              <ListItemIcon>
+                {!data[domain] && <QueryBuilderIcon color="action" />}
+                {data[domain] === "success" && (
+                  <CheckCircleIcon style={{ color: "#28a745" }} />
                 )}
-              </ListItem>
-            ))}
-          </InfiniteScroll>
+                {data[domain] === "error" && <ErrorIcon color="error" />}
+                {data[domain] === "warning" && (
+                  <WarningIcon style={{ color: "#ffc107" }} />
+                )}
+              </ListItemIcon>
+              <ListItemText primary={`${domain}.ir`} />
+              {data[domain] === "warning" && (
+                <ListItemSecondaryAction>
+                  <IconButton
+                    edge="end"
+                    onClick={() => {
+                      // setData({ ...data, [domain]: false });
+                      fetchNicData(domain);
+                    }}
+                  >
+                    <ReplayIcon />
+                  </IconButton>
+                </ListItemSecondaryAction>
+              )}
+            </ListItem>
+          ))}
         </List>
       </div>
       <ScrollTop {...props}>
-        <Fab color="secondary" size="small" aria-label="scroll back to top">
+        <Fab color="secondary" size="small">
           <KeyboardArrowUpIcon />
         </Fab>
       </ScrollTop>
+      <ScrollBottom {...props}>
+        <Fab size="small" color="secondary">
+          <KeyboardArrowDownIcon />
+        </Fab>
+      </ScrollBottom>
     </Box>
   );
 }
