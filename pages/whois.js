@@ -87,8 +87,9 @@ export default function Whois(props) {
         // handle success
         setDomains(domains.concat(response.data));
       })
-      .catch(function (error) {
+      .catch(function (e) {
         // handle error
+        console.log(e);
       });
   };
 
