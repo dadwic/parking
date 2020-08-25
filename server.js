@@ -1,7 +1,7 @@
 const express = require("express");
 const next = require("next");
 const cors = require("cors");
-const domains = require("./public/domains.json");
+const domains = require("./public/aaa-domains.json");
 
 const port = parseInt(process.env.PORT, 10) || 3000;
 const dev = process.env.NODE_ENV !== "production";
