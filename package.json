@@ -10,6 +10,7 @@
     "cors": "^2.8.5",
     "cross-env": "^7.0.2",
     "express": "^4.17.1",
+    "lodash.orderby": "^4.6.0",
     "next": "latest",
     "prop-types": "latest",
     "react": "latest",
