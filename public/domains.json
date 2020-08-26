@@ -1,46 +1,57 @@
 [
   {
     "id": 228141,
+    "premium": true,
     "domain": "sooraya.ir"
   },
   {
     "id": 233161,
+    "premium": true,
     "domain": "flybe.ir"
   },
   {
     "id": 233182,
+    "premium": true,
     "domain": "mosyo.ir"
   },
   {
     "id": 242468,
+    "premium": true,
     "domain": "wilbur.ir"
   },
   {
     "id": 242469,
+    "premium": true,
     "domain": "orville.ir"
   },
   {
     "id": 242925,
+    "premium": true,
     "domain": "wilber.ir"
   },
   {
     "id": 244940,
+    "blocked": true,
     "domain": "mehralian.org"
   },
   {
     "id": 248807,
+    "blocked": true,
     "domain": "oddwic.com"
   },
   {
     "id": 250293,
+    "premium": true,
     "domain": "eqbali.ir"
   },
   {
     "id": 251560,
+    "premium": true,
     "domain": "mahdaneh.ir"
   },
   {
     "id": 279572,
+    "premium": true,
     "domain": "carboon.ir"
   },
   {
@@ -69,6 +80,7 @@
   },
   {
     "id": 287857,
+    "blocked": true,
     "domain": "odwic.ir"
   },
   {
@@ -81,14 +93,17 @@
   },
   {
     "id": 298016,
+    "blocked": true,
     "domain": "bookrefer.com"
   },
   {
     "id": 297920,
+    "blocked": true,
     "domain": "bookrefer.ir"
   },
   {
     "id": 304491,
+    "blocked": true,
     "domain": "dadwic.ir"
   },
   {
@@ -97,54 +112,62 @@
   },
   {
     "id": 315405,
+    "blocked": true,
     "domain": "oddwic.ir"
   },
   {
     "id": 319628,
+    "premium": true,
     "domain": "sfarvarin.ir"
   },
   {
     "id": 321262,
+    "blocked": true,
     "domain": "bookrifer.ir"
   },
   {
     "id": 321701,
+    "premium": true,
     "domain": "mahduneh.ir"
   },
   {
     "id": 324758,
+    "premium": true,
     "domain": "hanmadang.ir"
   },
   {
     "id": 341179,
+    "premium": true,
     "domain": "ketab-sefid.ir"
   },
   {
-    "id": 346985,
-    "domain": "timebike.ir"
-  },
-  {
     "id": 361975,
+    "premium": true,
     "domain": "narendeh.ir"
   },
   {
     "id": 366498,
+    "premium": true,
     "domain": "farmanirestaurant.ir"
   },
   {
     "id": 366511,
+    "premium": true,
     "domain": "farmanirestaurant.com"
   },
   {
     "id": 408316,
+    "blocked": true,
     "domain": "bkref.ir"
   },
   {
     "id": 415183,
+    "premium": true,
     "domain": "vilber.ir"
   },
   {
     "id": 415184,
+    "blocked": true,
     "domain": "bookingrefer.ir"
   },
   {
@@ -197,22 +220,27 @@
   },
   {
     "id": 518292,
+    "premium": true,
     "domain": "mahduneh.com"
   },
   {
     "id": 518657,
+    "premium": true,
     "domain": "esfarvarin.com"
   },
   {
     "id": 518658,
+    "premium": true,
     "domain": "niaq.ir"
   },
   {
     "id": 518659,
+    "premium": true,
     "domain": "niagh.ir"
   },
   {
     "id": 518660,
+    "premium": true,
     "domain": "niaghi.ir"
   },
   {
@@ -229,6 +257,7 @@
   },
   {
     "id": 521797,
+    "premium": true,
     "domain": "wilsoon.ir"
   },
   {
@@ -237,10 +266,12 @@
   },
   {
     "id": 522661,
+    "premium": true,
     "domain": "qazvinshops.ir"
   },
   {
     "id": 523954,
+    "blocked": true,
     "domain": "dadwic.com"
   },
   {
@@ -340,10 +371,6 @@
     "domain": "housecall.ir"
   },
   {
-    "id": 526734,
-    "domain": "smp-mt.ir"
-  },
-  {
     "id": 526737,
     "domain": "bitali.ir"
   },
@@ -377,10 +404,12 @@
   },
   {
     "id": 527043,
+    "premium": true,
     "domain": "mukbang.ir"
   },
   {
     "id": 527044,
+    "premium": true,
     "domain": "mokbang.ir"
   },
   {
@@ -417,10 +446,12 @@
   },
   {
     "id": 527305,
+    "premium": true,
     "domain": "fizix.ir"
   },
   {
     "id": 527310,
+    "premium": true,
     "domain": "fizic.ir"
   },
   {
@@ -453,14 +484,12 @@
   },
   {
     "id": 527536,
+    "premium": true,
     "domain": "4ord.ir"
   },
   {
-    "id": 527539,
-    "domain": "6ix9ine.ir"
-  },
-  {
     "id": 527541,
+    "premium": true,
     "domain": "billie.ir"
   },
   {
@@ -481,6 +510,7 @@
   },
   {
     "id": 527997,
+    "premium": true,
     "domain": "numer.ir"
   },
   {
@@ -513,18 +543,22 @@
   },
   {
     "id": 528028,
+    "premium": true,
     "domain": "learn-js.ir"
   },
   {
     "id": 528029,
+    "premium": true,
     "domain": "learn-html.ir"
   },
   {
     "id": 528030,
+    "premium": true,
     "domain": "learn-php.ir"
   },
   {
     "id": 528031,
+    "premium": true,
     "domain": "learn-cpp.ir"
   },
   {
@@ -537,6 +571,7 @@
   },
   {
     "id": 528472,
+    "premium": true,
     "domain": "muix.ir"
   },
   {
@@ -545,6 +580,7 @@
   },
   {
     "id": 528758,
+    "premium": true,
     "domain": "databricks.ir"
   },
   {
@@ -621,6 +657,7 @@
   },
   {
     "id": 530443,
+    "premium": true,
     "domain": "monorepo.ir"
   },
   {
@@ -637,6 +674,7 @@
   },
   {
     "id": 530603,
+    "premium": true,
     "domain": "bilie.ir"
   },
   {
@@ -657,6 +695,7 @@
   },
   {
     "id": 530957,
+    "premium": true,
     "domain": "htmlandcssbook.ir"
   },
   {
@@ -769,10 +808,12 @@
   },
   {
     "id": 531532,
+    "premium": true,
     "domain": "1e2.ir"
   },
   {
     "id": 531533,
+    "premium": true,
     "domain": "1e3.ir"
   },
   {
@@ -849,10 +890,12 @@
   },
   {
     "id": 532219,
+    "premium": true,
     "domain": "kabbage.ir"
   },
   {
     "id": 532163,
+    "premium": true,
     "domain": "five9.ir"
   },
   {
@@ -917,6 +960,7 @@
   },
   {
     "id": 532435,
+    "premium": true,
     "domain": "millmentor.ir"
   },
   {
@@ -993,6 +1037,7 @@
   },
   {
     "id": 532942,
+    "premium": true,
     "domain": "bookable.ir"
   },
   {
@@ -1013,6 +1058,7 @@
   },
   {
     "id": 532993,
+    "premium": true,
     "domain": "smartbug.ir"
   },
   {
@@ -1065,6 +1111,7 @@
   },
   {
     "id": 533391,
+    "premium": true,
     "domain": "editorx.ir"
   },
   {
@@ -1093,6 +1140,7 @@
   },
   {
     "id": 533539,
+    "premium": true,
     "domain": "pagecloud.ir"
   },
   {
@@ -1129,10 +1177,12 @@
   },
   {
     "id": 533731,
+    "premium": true,
     "domain": "expediagroup.ir"
   },
   {
     "id": 533732,
+    "premium": true,
     "domain": "hurb.ir"
   },
   {
@@ -1161,6 +1211,7 @@
   },
   {
     "id": 533892,
+    "premium": true,
     "domain": "htmlreference.ir"
   },
   {
@@ -1277,6 +1328,7 @@
   },
   {
     "id": 534662,
+    "premium": true,
     "domain": "ui6.ir"
   },
   {
@@ -1289,6 +1341,7 @@
   },
   {
     "id": 534700,
+    "premium": true,
     "domain": "absoluteweb.ir"
   },
   {
@@ -1317,6 +1370,7 @@
   },
   {
     "id": 534979,
+    "premium": true,
     "domain": "shecodes.ir"
   },
   {
@@ -1353,10 +1407,12 @@
   },
   {
     "id": 534867,
+    "premium": true,
     "domain": "dmns.ir"
   },
   {
     "id": 534971,
+    "premium": true,
     "domain": "rewire.ir"
   },
   {
