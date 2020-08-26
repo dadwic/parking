@@ -48,7 +48,9 @@ export default function Index(props) {
           style={{ fontWeight: "bold" }}
           gutterBottom
         >
-          {sentenceCase(props.host, { delimiter: "." })}
+          {props.host.search("-") > -1
+            ? props.host
+            : sentenceCase(props.host, { delimiter: "." })}
         </Typography>
         <ProTip />
         <Typography variant="h5" color="textSecondary" gutterBottom>
